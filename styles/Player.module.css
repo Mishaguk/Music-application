@@ -1,0 +1,27 @@
+.player {
+  position: fixed;
+  bottom: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.artist {
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .player {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
