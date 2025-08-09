@@ -38,8 +38,6 @@ const TracksClient = () => {
 
   const [privateTracks, setPrivateTracks] = useState(false);
 
-  console.count("render");
-
   useEffect(() => {
     dispatch(
       fetchTracks({

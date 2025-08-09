@@ -1,6 +1,6 @@
 .player {
   position: fixed;
-  bottom: 20;
+  bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
