@@ -120,7 +120,7 @@ const Create = () => {
                 {!picture ? (
                   <DropFileInput
                     onChange={(file) => setPicture(file)}
-                    accept={{ "image/*": [] }}
+                    accept={{ "image/png": [".png", ".jpg"] }}
                     label="Drag 'n' drop track picture here, or click to select files"
                   />
                 ) : (

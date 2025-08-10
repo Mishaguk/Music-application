@@ -4,7 +4,7 @@ import { Accept, useDropzone } from "react-dropzone";
 
 type DropFileInputProps = {
   onChange: (file: File) => void;
-  accept: Accept;
+  accept?: Accept;
   label?: string;
 };
 
