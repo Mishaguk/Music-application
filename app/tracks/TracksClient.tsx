@@ -58,7 +58,7 @@ const TracksClient = () => {
       direction="column"
       bgcolor={theme.palette.background.paper}
       borderRadius={4}
-      marginBottom={{ xs: 15, xl: 0 }}
+      marginBottom={{ xs: 15 }}
     >
       <Stack
         flexDirection="row"

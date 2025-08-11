@@ -19,6 +19,7 @@ const SearchInput = () => {
     const params = new URLSearchParams(window.location.search);
     if (debouncedInput) {
       params.set("search", debouncedInput);
+      params.set("page", "0");
     } else {
       params.delete("search");
     }
