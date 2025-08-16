@@ -1,5 +1,6 @@
 import connectionToDatabase from "@/lib/mongoose";
 import Track from "@/models/track";
+import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function GET(
@@ -12,6 +13,11 @@ export async function GET(
     const params = context.params;
 
     const { id } = await params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+    }
+
     const track = await Track.findById(id);
 
     return NextResponse.json(track, { status: 200 });
