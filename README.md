@@ -2,6 +2,7 @@
 
 This is a fullstack music application built for practicing modern web development.  
 It is developed using **Next.js**, **Material UI**, **React**, and **Redux Toolkit**, with backend functionality handled via **Next.js API routes**.
+Files are stored in the **Cloudinary** cloud storage.
 
 The app allows you to play tracks, control playback (play/pause), adjust volume, and serves as a foundation for a more complete music service, including server-side track management and API integration.
 
@@ -11,7 +12,7 @@ This music app provides a set of core functionalities to enjoy and manage your m
 
 - Track list: listen public or your uploaded tracks
 
-  ![App Screenshot]('./public/listen-tracks.png')
+  ![App Screenshot](./public/images/listen-tracks-demo.png)
 
 - Track playback (play/pause, seek)
 
@@ -41,6 +42,7 @@ Create a `.env.local` file in the root folder and add the following environment 
 
 ```bash
 MONGO_URL=
+
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
 NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
 NEXT_PUBLIC_CLOUDINARY_API_URL=
