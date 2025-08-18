@@ -10,9 +10,11 @@ The app allows you to play tracks, control playback (play/pause), adjust volume,
 This music app provides a set of core functionalities to enjoy and manage your music experience. Key features include:
 
 - Track list: listen public or your uploaded tracks
-  ![App Screenshot]('./public/Listen tracks.png')
+
+  ![App Screenshot]('./public/listen-tracks.png')
 
 - Track playback (play/pause, seek)
+
   ![Demo GIF](./public/gifs/player-demo.gif)
 
 ## 🚀 Installation / Local Setup
@@ -23,28 +25,28 @@ Follow these steps to run the project locally:
 
 ```bash
 git clone https://github.com/Mishaguk/Music-application.git
-cd music-app
 ```
 
 2. **Install dependencies**
 
-````bash
+```bash
 npm install
 # or
-yarn install```
-````
+yarn install
+```
 
 3. **Create a `.env.local` file**
 
 Create a `.env.local` file in the root folder and add the following environment variables:
-`
-MONGO_URL=
 
+```bash
+MONGO_URL=
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
 NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
 NEXT_PUBLIC_CLOUDINARY_API_URL=
 
 NEXT_PUBLIC_API_URL=http://localhost:3000`
+```
 
 4. **Run the development server**
 
@@ -55,4 +57,5 @@ yarn dev
 ```
 
 5. **Open in browser**
+
    Navigate to http://localhost:3000 to see your app running.
