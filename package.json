@@ -20,7 +20,6 @@
     "axios": "^1.10.0",
     "mongoose": "^8.16.4",
     "motion": "^12.23.6",
-    "music-metadata": "^11.7.3",
     "next": "^15.4.0-canary.88",
     "next-cloudinary": "^6.16.0",
     "react": "^19.0.0",
