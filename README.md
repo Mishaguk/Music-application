@@ -6,6 +6,10 @@ Files are stored in the **Cloudinary** cloud storage.
 
 The app allows you to play tracks, control playback (play/pause), adjust volume, and serves as a foundation for a more complete music service, including server-side track management and API integration.
 
+## 🌐 Live Demo
+
+[![Deploy](https://img.shields.io/badge/Visit%20Site-Music%20App-blue?style=for-the-badge&logo=vercel)](https://music-application-tau.vercel.app/)
+
 ## Features
 
 This music app provides a set of core functionalities to enjoy and manage your music experience. Key features include:
@@ -14,9 +18,23 @@ This music app provides a set of core functionalities to enjoy and manage your m
 
   ![App Screenshot](./public/images/listen-tracks-demo.png)
 
+- Adaptive design: phone player supported
+
+  ![App Screenshot](./public/images/phone-screen.png)
+
+- Detail information about track:
+
+  ![App Screenshot](./public/images/detail-track-page-demo.png)
+
 - Track playback (play/pause, seek)
 
   ![Demo GIF](./public/gifs/player-demo.gif)
+
+- Upload your own track
+  ![Demo GIF](./public/gifs/upload-track-demo.gif)
+
+- Search tracks
+  ![Demo GIF](./public/gifs/search-demo.gif)
 
 ## 🚀 Installation / Local Setup
 
