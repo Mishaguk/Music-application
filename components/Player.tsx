@@ -102,6 +102,7 @@ const Player = () => {
       className={styles.player}
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
+      key={active._id}
       transition={{
         duration: 0.4,
         type: "spring",

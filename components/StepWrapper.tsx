@@ -38,7 +38,7 @@ const StepWrapper = ({
   const isForward = activeStep > prevStep;
 
   return (
-    <Stack overflow="hidden" sx={{ gap: { xs: 6, xl: 10 } }}>
+    <Stack overflow="hidden" sx={{ gap: { xs: 6, xl: 8 } }}>
       <Stepper activeStep={activeStep}>
         {steps.map((step, index) => (
           <Step key={index} completed={activeStep > index}>
@@ -47,7 +47,7 @@ const StepWrapper = ({
         ))}
       </Stepper>
       <Stack alignItems="center">
-        <Stack width={400}>
+        <Stack maxWidth={400}>
           <Typography color="textSecondary">
             ⚠️ Important Notice: By uploading a track, you confirm that you
             either own the rights to the content or have obtained proper

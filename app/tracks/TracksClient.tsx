@@ -18,7 +18,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 
 const TracksClient = () => {
   const dispatch = useAppDispatch();
@@ -37,6 +37,14 @@ const TracksClient = () => {
   const limit = searchParams.get("limit") || pagination_offset;
 
   const [privateTracks, setPrivateTracks] = useState(false);
+
+  const handlePrivateTracks = useCallback(
+    (checked: boolean) => {
+      setPrivateTracks(checked);
+      router.push(`?page=0&limit=${limit}${search ? `&search=${search}` : ""}`);
+    },
+    [limit, router, search]
+  );
 
   useEffect(() => {
     dispatch(
@@ -101,7 +109,7 @@ const TracksClient = () => {
             <Checkbox
               checked={privateTracks}
               onChange={(e) => {
-                setPrivateTracks(e.target.checked);
+                handlePrivateTracks(e.target.checked);
               }}
             />
           }
