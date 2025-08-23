@@ -21,15 +21,22 @@ export async function GET(req: NextRequest) {
     const privateTracks = params.get("privateTracks") || false;
 
     const filter: FilterQuery<TrackT> = {
-      name: { $regex: new RegExp(search, "i") },
+      $and: [
+        {
+          $or: [
+            { name: { $regex: new RegExp(search, "i") } },
+            { artist: { $regex: new RegExp(search, "i") } },
+          ],
+        },
+      ],
     };
 
     if (privateTracks === "true" && userId) {
       filter.authorId = userId;
     } else {
-      filter.$or = [{ isPublic: true }];
+      filter.$and?.push({ isPublic: true });
       if (userId) {
-        filter.$or.push({ authorId: userId });
+        filter.$and?.[0].$or?.push({ authorId: userId });
       }
     }
 
