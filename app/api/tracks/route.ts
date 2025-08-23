@@ -20,24 +20,30 @@ export async function GET(req: NextRequest) {
 
     const privateTracks = params.get("privateTracks") || false;
 
-    const filter: FilterQuery<TrackT> = {
-      $and: [
-        {
-          $or: [
-            { name: { $regex: new RegExp(search, "i") } },
-            { artist: { $regex: new RegExp(search, "i") } },
-          ],
-        },
+    const searchRegex = new RegExp(search, "i");
+    const searchFilter = {
+      $or: [
+        { name: { $regex: searchRegex } },
+        { artist: { $regex: searchRegex } },
       ],
     };
+    let filter: FilterQuery<TrackT>;
 
     if (privateTracks === "true" && userId) {
-      filter.authorId = userId;
+      filter = {
+        $and: [{ authorId: userId }, searchFilter],
+      };
     } else {
-      filter.$and?.push({ isPublic: true });
+      const orConditions: [{ isPublic?: boolean; authorId?: string }] = [
+        { isPublic: true },
+      ];
       if (userId) {
-        filter.$and?.[0].$or?.push({ authorId: userId });
+        orConditions.push({ authorId: userId });
       }
+
+      filter = {
+        $and: [searchFilter, { $or: orConditions }],
+      };
     }
 
     const [tracks, totalCount] = await Promise.all([
