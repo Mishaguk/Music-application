@@ -38,7 +38,10 @@ const StepWrapper = ({
   const isForward = activeStep > prevStep;
 
   return (
-    <Stack overflow="hidden" sx={{ gap: { xs: 6, xl: 8 } }}>
+    <Stack
+      overflow="hidden"
+      sx={{ gap: { xs: 3, xl: 8 }, marginBottom: { xs: 20 } }}
+    >
       <Stepper activeStep={activeStep}>
         {steps.map((step, index) => (
           <Step key={index} completed={activeStep > index}>
