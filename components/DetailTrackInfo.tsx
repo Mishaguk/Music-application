@@ -55,7 +55,10 @@ export const DetailTrackInfo = ({ track }: Props) => {
       bgcolor={theme.palette.background.paper}
       borderRadius={2}
       boxShadow={3}
-      sx={{ flexDirection: { xs: "column", md: "row" } }}
+      sx={{
+        flexDirection: { xs: "column", md: "row" },
+        marginBottom: { xs: 20 },
+      }}
     >
       <Stack
         flexGrow={1}
